@@ -17,7 +17,7 @@ public class RubyController : MonoBehaviour
         float vertical = Input.GetAxis("Vertical");
 
         Vector2 position = transform.position;
-        position += new Vector2(horizontal, vertical) * 0.1f;
+        position += new Vector2(horizontal, vertical) * 3f * Time.deltaTime;
         transform.position = position;
     }
 }
