@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3763325870964088619}
   - component: {fileID: 3763325870964088618}
+  - component: {fileID: 2161588002182815206}
   m_Layer: 0
   m_Name: TreeBig3
   m_TagString: Untagged
@@ -84,3 +85,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!70 &2161588002182815206
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3763325870964088617}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.16979948, y: -0.054053918}
+  m_Size: {x: 0.8157854, y: 0.25849807}
+  m_Direction: 1
