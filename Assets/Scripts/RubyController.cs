@@ -27,6 +27,11 @@ public class RubyController : MonoBehaviour
     [SerializeField]
     GameObject projectilePrefab;
 
+    AudioSource audioSource;
+
+    [SerializeField]
+    AudioClip throwClip, hurtClip;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +40,8 @@ public class RubyController : MonoBehaviour
         currentHealth = maxHealth;
 
         animator = GetComponent<Animator>();
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -98,6 +105,7 @@ public class RubyController : MonoBehaviour
             animator.SetTrigger("Hit");
             isInvincible = true;
             invincibleTimer = timeInvincible;
+            PlaySound(hurtClip);
         }
 
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
@@ -112,5 +120,11 @@ public class RubyController : MonoBehaviour
         projectile.Launch(lookDirection, 300);
 
         animator.SetTrigger("Launch");
+        PlaySound(throwClip);
+    }
+
+    public void PlaySound(AudioClip clip)
+    {
+        audioSource.PlayOneShot(clip);
     }
 }
