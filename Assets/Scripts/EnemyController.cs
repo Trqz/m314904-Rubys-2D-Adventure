@@ -16,6 +16,12 @@ public class EnemyController : MonoBehaviour
 
     Animator animator;
 
+    [SerializeField]
+    ParticleSystem smokeEffect;
+
+    [SerializeField]
+    GameObject hitEffect;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -83,5 +89,8 @@ public class EnemyController : MonoBehaviour
         rigidbody2D.simulated = false;
 
         animator.SetTrigger("Fixed");
+
+        smokeEffect.Stop();
+        Instantiate(hitEffect, transform.position + Vector3.up * 1.5f, Quaternion.identity);
     }
 }
